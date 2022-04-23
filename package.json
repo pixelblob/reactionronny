@@ -1,0 +1,19 @@
+{
+  "name": "reactionronny",
+  "version": "1.0.0",
+  "description": "If you want to host this yourself edit \"config.json\" and fill in the required info.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelblob/reactionronny.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixelblob/reactionronny/issues"
+  },
+  "homepage": "https://github.com/pixelblob/reactionronny#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}

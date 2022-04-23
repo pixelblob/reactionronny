@@ -19,8 +19,10 @@ module.exports = {
         var score = scores.find(s=> s.id == messageReaction.message.author.id)
 
         if (!score) {
-            scores.push({id:messageReaction.message.author.id,score: 1})
+            scores.push({id:messageReaction.message.author.id,score: 0,messages:[{id: messageReaction.message.id,score: 0}]})
         } else {
+            var scoremessage = score.messages.find(m=> m.id == messageReaction.message.id)
+            if (scoremessage) scoremessage.score--
             score.score--
         }
 

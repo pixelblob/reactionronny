@@ -20,7 +20,7 @@ module.exports = {
         console.log(hours)
         if (hours > 167) {
 
-            interaction.reply("SCORES ARE BEING REEST AFTER THIS MESSAGE!\n"+scores.map(s=>`${interaction.guild.members.cache.get(s.id).user.username}: ${s.score}`).join("\n"))
+            interaction.reply((scores.length > 0 ?"SCORES ARE BEING REEST AFTER THIS MESSAGE!\n":"No scores have been recorded!")+scores.map(s=>`***__${interaction.guild.members.cache.get(s.id).user.username}__:***\n •Most: ${s.messages.sort((a, b) => b.score-a.score)[0].score}\n •Total: ${s.score}\n •Memes: ${s.messages.length}`).join("\n"))
 
             console.log(test)
             test.lastResetTime = new Date()
@@ -41,8 +41,9 @@ module.exports = {
           });
 
           console.log(scores)
+          
 
-        if (hours < 167) interaction.reply((scores.length > 0 ?"Below are score, yes:\n":"No scores have been recorded!")+scores.map(s=>`${interaction.guild.members.cache.get(s.id).user.username}: ${s.score}`).join("\n"))
+        if (hours < 167) interaction.reply((scores.length > 0 ?"Below are score, yes:\n":"No scores have been recorded!")+scores.map(s=>`***__${interaction.guild.members.cache.get(s.id).user.username}__:***\n •Most: ${s.messages.sort((a, b) => b.score-a.score)[0].score}\n •Total: ${s.score}\n •Memes: ${s.messages.length}`).join("\n"))
 
     }
 }

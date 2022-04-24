@@ -1,6 +1,7 @@
 const { client } = require("../index.js")
 const {MessageAttachment} = require("discord.js")
 const fs = require("fs")
+const { reaction } = require('../config.json');
 
 module.exports = {
     name: 'messageReactionAdd',
@@ -9,7 +10,7 @@ module.exports = {
 
         var {id} = require("../settings/test.json")
         var scores = require("../settings/scores.json")
-        if (messageReaction.emoji.name != "👍") return;
+        if (messageReaction.emoji.name != reaction) return;
         if (user.bot) return;
         if (messageReaction.message.channelId != id) return;
 
